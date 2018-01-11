@@ -7,6 +7,8 @@ import  * as ReactBootstrap from 'react-bootstrap';
 import {Router, Route, Link, browserHistory} from 'react-router';
 import BrowserHistory from 'react-router/lib/browserHistory';
 
+import mainLayout from './layout/main_layout';
+
 const {
     Navbar,
     Nav,
@@ -29,11 +31,11 @@ function FieldGroup({id, label, help, ...props}) {
 
 const Login = () => {
     return (
-        <Row>
+        <Row style={{background:'url(' + process.env.PUBLIC_URL + '/images/banner510.jpg)', backgroundPosition: 'center',backgroundRepeat:'no-repeat', backgroundSize: 'cover'}}>
             <Navbar inverse>
                 <Navbar.Header>
                     <Navbar.Brand>
-                        <a href="/">FMWT Inventory</a>
+                        <a href="/">Your Online Stock</a>
                     </Navbar.Brand>
                 </Navbar.Header>
                 <Nav>
@@ -42,7 +44,7 @@ const Login = () => {
                 </Nav>
             </Navbar>
             <Grid>
-                <Col md={6} xsOffset={3} className="loginBox">
+                <Col md={4} xsOffset={0} className="loginBox">
                     <form>
                         <FieldGroup
                             id="formControlsEmail"
@@ -62,7 +64,7 @@ const Login = () => {
                 </Col>
             </Grid>
             <Row>
-                <Col md={12} style={{marginTop:'16.5%', background: 'black', textAlign: 'center', color: 'white'}}>
+                <Col md={12} style={{marginTop:'20%', background: '#333', textAlign: 'center', color: 'white'}}>
                     <h6>Copy Rights Reserved 2018</h6>
                 </Col>
             </Row>
@@ -72,11 +74,11 @@ const Login = () => {
 
 const Register = () => {
     return (
-        <Row>
-            <Navbar inverse>
+        <Row style={{background:'url(' + process.env.PUBLIC_URL + '/images/banner510.jpg)', backgroundPosition: 'center',backgroundRepeat:'no-repeat', backgroundSize: 'cover'}}>
+        <Navbar inverse>
                 <Navbar.Header>
                     <Navbar.Brand>
-                        <a href="/">FMWT Inventory</a>
+                        <a href="/">Your Online Stock</a>
                     </Navbar.Brand>
                 </Navbar.Header>
                 <Nav>
@@ -85,7 +87,7 @@ const Register = () => {
                 </Nav>
             </Navbar>
             <Grid>
-                <Col md={6} xsOffset={3} className="loginBox" style={{marginTop:'5%'}}>
+                <Col md={4} xsOffset={0} className="loginBox" style={{marginTop:'5%'}}>
                     <form>
                         <FieldGroup
                             id="formControlsText"
@@ -109,13 +111,6 @@ const Register = () => {
                             label="Repeat Password"
                             type="password"
                         />
-                        <FormGroup>
-                            <ControlLabel>Static text</ControlLabel>
-                            <FormControl.Static>
-                                email@example.com
-                            </FormControl.Static>
-                        </FormGroup>
-
                         <Button type="submit" bsStyle="primary" href="/productDetail">
                             Submit
                         </Button>
@@ -123,7 +118,7 @@ const Register = () => {
                 </Col>
             </Grid>
             <Row>
-                <Col md={12} style={{marginTop:'8%', background: 'black', textAlign: 'center', color: 'white'}}>
+                <Col md={12} style={{marginTop:'15%', background: '#333', textAlign: 'center', color: 'white'}}>
                     <h6>Copy Rights Reserved 2018</h6>
                 </Col>
             </Row>
@@ -137,7 +132,7 @@ const Products = () => {
             <Navbar inverse>
                 <Navbar.Header>
                     <Navbar.Brand>
-                        <a href="/">FMWT Inventory</a>
+                        <a href="/">Your Online Stock</a>
                     </Navbar.Brand>
                 </Navbar.Header>
                 <Nav>
@@ -246,7 +241,7 @@ const Products = () => {
                 </Row>
             </Grid>
             <Row>
-                <Col md={12} style={{background: 'black', textAlign: 'center', color: 'white'}}>
+                <Col md={12} style={{background: '#333', textAlign: 'center', color: 'white'}}>
                     <h6>Copy Rights Reserved 2018</h6>
                 </Col>
             </Row>
@@ -261,7 +256,7 @@ const Home = () => {
             <Navbar inverse>
                 <Navbar.Header>
                     <Navbar.Brand>
-                        <a href="/">FMWT Inventory</a>
+                        <a href="/">Your Online Stock</a>
                     </Navbar.Brand>
                 </Navbar.Header>
                 <Nav>
@@ -306,8 +301,48 @@ const Home = () => {
             </Row>
             <Grid>
                 <Row>
-                    <Col md={12} style={{borderBottom: '1px solid lightgrey'}}>
-                        <h2>Categories</h2>
+
+                </Row>
+            </Grid>
+
+            <Grid style={{marginTop:'2%'}}>
+                <Row>
+                    <Col xs={4} md={3}>
+                        <Thumbnail href="/category" src={process.env.PUBLIC_URL + '/images/c5.jpg'} alt="242x200">
+                            <h3>Men</h3>
+                        </Thumbnail>
+                    </Col>
+                    <Col xs={6} md={3}>
+                        <Thumbnail href="/category" src={process.env.PUBLIC_URL + '/images/c6.jpg'} alt="242x200">
+                            <h3>Women</h3>
+                        </Thumbnail>
+                    </Col>
+                    <Col xs={6} md={3}>
+                        <Thumbnail href="/category" src={process.env.PUBLIC_URL + '/images/c7.jpg'} alt="242x200">
+                            <h3>Kids</h3>
+                        </Thumbnail>
+                    </Col>
+                    <Col xs={6} md={3}>
+                        <Thumbnail href="/category" src={process.env.PUBLIC_URL + '/images/c8.jpg'} alt="242x200">
+                            <h3>Accessories</h3>
+                        </Thumbnail>
+                    </Col>
+                </Row>
+            </Grid>
+
+            <Grid>
+                <Row>
+                    <Col md={12}>
+                        <img style={{width:'100%', height:'500px'}} alt="900x500"
+                             src={process.env.PUBLIC_URL + '/images/sale-banner.jpg'}/>
+                    </Col>
+                </Row>
+            </Grid>
+
+            <Grid>
+                <Row>
+                    <Col md={12} style={{marginTop:'2%', borderBottom: '1px solid lightgrey',background: 'rgb(233, 146, 53)',color: 'white'}}>
+                        <h2>Featured</h2>
                     </Col>
                 </Row>
             </Grid>
@@ -315,25 +350,25 @@ const Home = () => {
             <Grid style={{marginTop:'2%'}}>
                 <Row>
                     <Col xs={4} md={3}>
-                        <Thumbnail href="/category" src={process.env.PUBLIC_URL + '/images/c1.png'} alt="242x200">
+                        <Thumbnail href="/productDetail" src={process.env.PUBLIC_URL + '/images/sb2.jpg'} alt="242x200">
                         </Thumbnail>
                     </Col>
                     <Col xs={6} md={3}>
-                        <Thumbnail href="/category" src={process.env.PUBLIC_URL + '/images/c2.png'} alt="242x200">
+                        <Thumbnail href="/productDetail" src={process.env.PUBLIC_URL + '/images/shoes1.jpg'} alt="242x200">
                         </Thumbnail>
                     </Col>
                     <Col xs={6} md={3}>
-                        <Thumbnail href="/category" src={process.env.PUBLIC_URL + '/images/c3.png'} alt="242x200">
+                        <Thumbnail href="/productDetail" src={process.env.PUBLIC_URL + '/images/sb5.jpg'} alt="242x200">
                         </Thumbnail>
                     </Col>
                     <Col xs={6} md={3}>
-                        <Thumbnail href="/category" src={process.env.PUBLIC_URL + '/images/c4.png'} alt="242x200">
+                        <Thumbnail href="/productDetail" src={process.env.PUBLIC_URL + '/images/sb7.jpg'} alt="242x200">
                         </Thumbnail>
                     </Col>
                 </Row>
             </Grid>
             <Row>
-                <Col md={12} style={{background: 'black', textAlign: 'center', color: 'white'}}>
+                <Col md={12} style={{background: '#333', textAlign: 'center', color: 'white'}}>
                     <h6>Copy Rights Reserved 2018</h6>
                 </Col>
             </Row>
@@ -348,7 +383,7 @@ const Category = () => {
             <Navbar inverse>
                 <Navbar.Header>
                     <Navbar.Brand>
-                        <a href="/">FMWT Inventory</a>
+                        <a href="/">Your Online Stock</a>
                     </Navbar.Brand>
                 </Navbar.Header>
                 <Nav>
@@ -372,43 +407,59 @@ const Category = () => {
             <Grid style={{marginTop:'2%'}}>
                 <Row>
                     <Col xs={4} md={3}>
-                        <Thumbnail href="/products" src={process.env.PUBLIC_URL + '/images/c1.png'} alt="242x200">
+                        <Thumbnail href="/products" src={process.env.PUBLIC_URL + '/images/shoes1.jpg'} alt="242x200">
+                            <h3>Shoes</h3>
+                        </Thumbnail>
+                    </Col>
+                    <Col xs={4} md={3}>
+                        <Thumbnail href="/products" src={process.env.PUBLIC_URL + '/images/sb1.jpg'} alt="242x200">
+                            <h3>Back Packs</h3>
                         </Thumbnail>
                     </Col>
                     <Col xs={6} md={3}>
-                        <Thumbnail href="/products" src={process.env.PUBLIC_URL + '/images/c2.png'} alt="242x200">
+                        <Thumbnail href="/products" src={process.env.PUBLIC_URL + '/images/sb2.jpg'} alt="242x200">
+                            <h3>Winter Jackets</h3>
                         </Thumbnail>
                     </Col>
                     <Col xs={6} md={3}>
-                        <Thumbnail href="/products" src={process.env.PUBLIC_URL + '/images/c3.png'} alt="242x200">
+                        <Thumbnail href="/products" src={process.env.PUBLIC_URL + '/images/sb3.jpg'} alt="242x200">
+                            <h3>Summer Jackets</h3>
+                        </Thumbnail>
+                    </Col>
+
+                </Row>
+                <Row>
+                    <Col xs={4} md={3}>
+                        <Thumbnail href="/products" src={process.env.PUBLIC_URL + '/images/sb5.jpg'} alt="242x200">
+                            <h3>Shirts</h3>
                         </Thumbnail>
                     </Col>
                     <Col xs={6} md={3}>
-                        <Thumbnail href="/products" src={process.env.PUBLIC_URL + '/images/c4.png'} alt="242x200">
+                        <Thumbnail href="/products" src={process.env.PUBLIC_URL + '/images/sb6.jpg'} alt="242x200">
+                            <h3>Trousers</h3>
+                        </Thumbnail>
+                    </Col>
+                    <Col xs={6} md={3}>
+                        <Thumbnail href="/products" src={process.env.PUBLIC_URL + '/images/sb7.jpg'} alt="242x200">
+                            <h3>Caps</h3>
+                        </Thumbnail>
+                    </Col>
+                    <Col xs={6} md={3}>
+                        <Thumbnail href="/products" src={process.env.PUBLIC_URL + '/images/sb8.jpg'} alt="242x200">
+                            <h3>Travel</h3>
                         </Thumbnail>
                     </Col>
                 </Row>
                 <Row>
-                    <Col xs={4} md={3}>
-                        <Thumbnail href="/products" src={process.env.PUBLIC_URL + '/images/c1.png'} alt="242x200">
-                        </Thumbnail>
-                    </Col>
                     <Col xs={6} md={3}>
-                        <Thumbnail href="/products" src={process.env.PUBLIC_URL + '/images/c2.png'} alt="242x200">
-                        </Thumbnail>
-                    </Col>
-                    <Col xs={6} md={3}>
-                        <Thumbnail href="/products" src={process.env.PUBLIC_URL + '/images/c3.png'} alt="242x200">
-                        </Thumbnail>
-                    </Col>
-                    <Col xs={6} md={3}>
-                        <Thumbnail href="/products" src={process.env.PUBLIC_URL + '/images/c4.png'} alt="242x200">
+                        <Thumbnail href="/products" src={process.env.PUBLIC_URL + '/images/sb4.jpg'} alt="242x200">
+                            <h3>Sweatshirts</h3>
                         </Thumbnail>
                     </Col>
                 </Row>
             </Grid>
             <Row>
-                <Col md={12} style={{background: 'black', textAlign: 'center', color: 'white'}}>
+                <Col md={12} style={{background: '#333', textAlign: 'center', color: 'white'}}>
                     <h6>Copy Rights Reserved 2018</h6>
                 </Col>
             </Row>
@@ -423,7 +474,7 @@ const ProductDetail = () => {
             <Navbar inverse>
                 <Navbar.Header>
                     <Navbar.Brand>
-                        <a href="/">FMWT Inventory</a>
+                        <a href="/">Your Online Stock</a>
                     </Navbar.Brand>
                 </Navbar.Header>
                 <Nav>
@@ -439,14 +490,14 @@ const ProductDetail = () => {
             <Grid>
                 <Row>
                     <Col md={12} style={{borderBottom: '1px solid lightgrey'}}>
-                        <h2>Category >> Shoes >> Adidas</h2>
+                        <h3>Category >> <small> Shoes >> Adidas </small></h3>
                     </Col>
                 </Row>
             </Grid>
 
             <Grid style={{marginTop:'2%'}}>
                 <Row>
-                    <Col xs={4} md={3}>
+                    <Col md={6}>
                         <Thumbnail src={process.env.PUBLIC_URL + '/images/shoes.jpg'} alt="242x200">
                         </Thumbnail>
                     </Col>
@@ -459,13 +510,42 @@ const ProductDetail = () => {
                         <p><strong>Total:</strong> 100</p>
 
                         <p>
-                            <Button bsStyle="primary" >Mark Product</Button>&nbsp;
+                            <Button bsStyle="primary" >Edit Product</Button>&nbsp;
+                            <Button bsStyle="primary" >Add Product</Button>&nbsp;
                         </p>
                     </Col>
                 </Row>
             </Grid>
+            <Grid>
+                <Row>
+                    <Col md={12} style={{marginTop:'2%', borderBottom: '1px solid lightgrey',background: 'rgb(233, 146, 53)',color: 'white'}}>
+                        <h3>Related Products</h3>
+                    </Col>
+                </Row>
+            </Grid>
+
+            <Grid style={{marginTop:'2%'}}>
+                <Row>
+                    <Col xs={4} md={3}>
+                        <Thumbnail href="/productDetail" src={process.env.PUBLIC_URL + '/images/shoes3.jpg'} alt="242x200">
+                        </Thumbnail>
+                    </Col>
+                    <Col xs={6} md={3}>
+                        <Thumbnail href="/productDetail" src={process.env.PUBLIC_URL + '/images/shoes4.jpg'} alt="242x200">
+                        </Thumbnail>
+                    </Col>
+                    <Col xs={6} md={3}>
+                        <Thumbnail href="/productDetail" src={process.env.PUBLIC_URL + '/images/shoes7.jpg'} alt="242x200">
+                        </Thumbnail>
+                    </Col>
+                    <Col xs={6} md={3}>
+                        <Thumbnail href="/productDetail" src={process.env.PUBLIC_URL + '/images/shoes2.jpg'} alt="242x200">
+                        </Thumbnail>
+                    </Col>
+                </Row>
+            </Grid>
             <Row>
-                <Col md={12} style={{background: 'black', textAlign: 'center', color: 'white'}}>
+                <Col md={12} style={{background: '#333', textAlign: 'center', color: 'white'}}>
                     <h6>Copy Rights Reserved 2018</h6>
                 </Col>
             </Row>

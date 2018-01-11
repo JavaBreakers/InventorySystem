@@ -3478,7 +3478,7 @@ a.btn.disabled, fieldset[disabled] a.btn {
 .btn-primary {
     color: #fff;
     background-color: #ff923c;
-    border-color: #ffffff
+    /*border-color: #ffffff*/
 }
 
 .btn-primary.focus, .btn-primary:focus {
@@ -7217,7 +7217,8 @@ button.close {
 
 .loginBox{
     margin-top: 13%;
-    background: #f3f3f3;
+    /*background: #f3f3f3;*/
     padding: 2%;
-    border: 1px solid lightcyan;
+    color:white;
+    /*border: 1px solid lightcyan;*/
 }
